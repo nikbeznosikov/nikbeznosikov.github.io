@@ -1,259 +1,400 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=UA-52487969-10"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
 
-<head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-52487969-10"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
+			gtag('config', 'UA-52487969-10');
+		</script>
 
-		gtag('config', 'UA-52487969-10');
-	</script>
+		<title>Nikita Beznosikov | Front End Developer | ReactJS | Node.js</title>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, user-scalable=no"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+			integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript>
+			<link rel="stylesheet" href="assets/css/noscript.css"
+		/></noscript>
+	</head>
 
-	<title>Nikita Beznosikov Website</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-		integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<noscript>
-		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-</head>
+	<body class="is-preload">
+		<!-- Sidebar -->
+		<section id="sidebar">
+			<div class="inner">
+				<nav>
+					<ul>
+						<li><a href="#intro">Home</a></li>
+						<li><a href="#one">Portfolio</a></li>
+						<li><a href="#two">Skills</a></li>
+						<li><a href="#three">Contacts</a></li>
+					</ul>
+				</nav>
+			</div>
+		</section>
 
-<body class="is-preload">
+		<!-- Wrapper -->
+		<div id="wrapper">
+			<!-- Intro -->
+			<section id="intro" class="wrapper style1 fullscreen fade-up">
+				<div class="inner">
+					<h1>Nikita Beznosikov</h1>
+					<h2>Front End Developer | ReactJS | Node.js</h2>
+					<ul class="actions">
+						<li><a href="#one" class="button scrolly">Portfolio</a></li>
+					</ul>
+				</div>
+			</section>
 
-	<!-- Sidebar -->
-	<section id="sidebar">
-		<div class="inner">
-			<nav>
-				<ul>
-					<li><a href="#intro">Home</a></li>
-					<li><a href="#one">Portfolio</a></li>
-					<li><a href="#two">Skills</a></li>
-					<li><a href="#three">Contacts</a></li>
-				</ul>
-			</nav>
+			<!-- One -->
+			<section id="one" class="wrapper style2 spotlights">
+				<section>
+					<a href="/buyertool.html" class="image"
+						><img
+							src="images/buyertool.png"
+							alt=""
+							data-position="center center"
+					/></a>
+					<div class="content">
+						<div class="inner">
+							<h2>
+								Web app for Facebook campaigns analytics. (React.js, Bootstrap,
+								Redux etc.)
+							</h2>
+							<ul class="actions">
+								<li>
+									<a href="/buyertool.html" class="button">Check it out</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section>
+					<a
+						href="https://benz-chat-app.herokuapp.com"
+						target="_blank"
+						class="image"
+						><img src="images/chat.png" alt="" data-position="center center"
+					/></a>
+					<div class="content">
+						<div class="inner">
+							<h2>Chat web app on Node.js, Socket.io and Mustache.js</h2>
+							<ul class="actions">
+								<li>
+									<a
+										href="https://benz-chat-app.herokuapp.com"
+										target="_blank"
+										class="button"
+										>Check it out</a
+									>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section>
+					<a
+						href="https://github.com/nikbeznosikov/task-manager-api"
+						target="_blank"
+						class="image"
+						><img src="images/tasks.png" alt="" data-position="center center"
+					/></a>
+					<div class="content">
+						<div class="inner">
+							<h2>
+								REST API for CRUD users and tasks. (Node.js, Express, MongoDB,
+								Mongoose)
+							</h2>
+							<ul class="actions">
+								<li>
+									<a
+										href="https://github.com/nikbeznosikov/task-manager-api"
+										target="_blank"
+										class="button"
+										>Check it out</a
+									>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section>
+					<a
+						href="https://benz-weather-app.herokuapp.com/"
+						target="_blank"
+						class="image"
+						><img
+							src="./images/weather.png"
+							alt=""
+							data-position="center center"
+					/></a>
+					<div class="content">
+						<div class="inner">
+							<h2>
+								Web app allows user to request weather by zip, city or country
+								(Node.js, Mustache.js)
+							</h2>
+							<ul class="actions">
+								<li>
+									<a
+										href="https://benz-weather-app.herokuapp.com/"
+										target="_blank"
+										class="button"
+										>Check it out</a
+									>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section>
+					<a
+						href="https://soundreliz.com/musician"
+						target="_blank"
+						class="image"
+						><img
+							src="images/soundreliz.png"
+							alt=""
+							data-position="center center"
+					/></a>
+					<div class="content">
+						<div class="inner">
+							<h2>Website for musicians. HTML, CSS, Javascript</h2>
+							<ul class="actions">
+								<li>
+									<a
+										href="https://soundreliz.com/musician"
+										target="_blank"
+										class="button"
+										>Check it out</a
+									>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section>
+					<a
+						href="https://codepen.io/nikbeznosikov/full/zyqEJo"
+						target="_blank"
+						class="image"
+						><img
+							src="images/quoteMachine.png"
+							alt=""
+							data-position="center center"
+					/></a>
+					<div class="content">
+						<div class="inner">
+							<h2>Random quote machine on React</h2>
+							<ul class="actions">
+								<li>
+									<a
+										href="https://codepen.io/nikbeznosikov/full/zyqEJo"
+										target="_blank"
+										class="button"
+										>Watch on codepen.io</a
+									>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section>
+					<a
+						href="https://codepen.io/nikbeznosikov/full/YdZOMJ"
+						target="_blank"
+						class="image"
+						><img src="images/markdown.png" alt="" data-position="top center"
+					/></a>
+					<div class="content">
+						<div class="inner">
+							<h2>Realtime markdown preview on React</h2>
+							<ul class="actions">
+								<li>
+									<a
+										href="https://codepen.io/nikbeznosikov/full/YdZOMJ"
+										target="_blank"
+										class="button"
+										>Watch on codepen.io</a
+									>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section>
+					<a
+						href="https://codepen.io/nikbeznosikov/full/qLXOxw"
+						target="_blank"
+						class="image"
+						><img src="images/drumMachine.png" alt="" data-position="25% 25%"
+					/></a>
+					<div class="content">
+						<div class="inner">
+							<h2>Drum Machine on React</h2>
+							<ul class="actions">
+								<li>
+									<a
+										href="https://codepen.io/nikbeznosikov/full/qLXOxw"
+										target="_blank"
+										class="button"
+										>Watch on codepen.io</a
+									>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section>
+					<a
+						href="https://codepen.io/nikbeznosikov/full/LqNaaN"
+						target="_blank"
+						class="image"
+						><img src="images/barchart.png" alt="" data-position="25% 25%"
+					/></a>
+					<div class="content">
+						<div class="inner">
+							<h2>Bar chart D3.js</h2>
+							<ul class="actions">
+								<li>
+									<a
+										href="https://codepen.io/nikbeznosikov/full/LqNaaN"
+										target="_blank"
+										class="button"
+										>Watch on codepen.io</a
+									>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+			</section>
+
+			<!-- Two -->
+			<section id="two" class="wrapper style3 fade-up">
+				<div class="inner">
+					<h2>Skills</h2>
+					<div class="features">
+						<section>
+							<span class="icon major fab fa-html5"></span>
+							<h3>Front End</h3>
+							<p>HTML, CSS, Javascript ES6, React.js, Redux, React Native</p>
+						</section>
+						<section>
+							<span class="icon major fa-cogs"></span>
+							<h3>Back End</h3>
+							<p>Node.js, MongoDB, Express, Mongoose, Socket.io</p>
+						</section>
+						<section>
+							<span class="icon major fa-code"></span>
+							<h3>Development</h3>
+							<p>Jest.js, Git, Scrum, Agile</p>
+						</section>
+						<section>
+							<span class="icon major fa-user"></span>
+							<h3>Personal</h3>
+							<p>
+								Hardworking team player. I comply with the deadlines, suggest
+								ideas and take responsibility
+							</p>
+						</section>
+					</div>
+				</div>
+			</section>
+
+			<!-- Three -->
+			<section id="three" class="wrapper style1 fade-up">
+				<div class="inner">
+					<h2>Contacts</h2>
+					<div class="style1">
+						<section>
+							<ul class="contact">
+								<li>
+									<h3>Address</h3>
+									San Diego, CA 92108, USA
+								</li>
+								<li>
+									<h3>Email</h3>
+									<a href="mailto:nikitabeznosikov@gmail.com"
+										>nikitabeznosikov@gmail.com</a
+									>
+								</li>
+								<li>
+									<h3>Social</h3>
+									<ul class="icons">
+										<li>
+											<a
+												href="https://www.facebook.com/profile.php?id=100002039286978"
+												target="_blank"
+												class="fa-facebook"
+												><span class="label">Facebook</span></a
+											>
+										</li>
+										<li>
+											<a
+												href="https://github.com/nikbeznosikov"
+												target="_blank"
+												class="fa-github"
+												><span class="label">GitHub</span></a
+											>
+										</li>
+										<li>
+											<a
+												href="https://www.linkedin.com/in/nikita-beznosikov/"
+												target="_blank"
+												class="fa-linkedin"
+												><span class="label">LinkedIn</span></a
+											>
+										</li>
+										<li>
+											<a
+												href="https://codepen.io/nikbeznosikov/"
+												target="_blank"
+												class="fa-codepen"
+												><span class="label">Codepen</span></a
+											>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</section>
+					</div>
+				</div>
+			</section>
 		</div>
-	</section>
 
-	<!-- Wrapper -->
-	<div id="wrapper">
-
-		<!-- Intro -->
-		<section id="intro" class="wrapper style1 fullscreen fade-up">
+		<!-- Footer -->
+		<footer id="footer" class="wrapper style1-alt">
 			<div class="inner">
-				<h1>Nikita Beznosikov</h1>
-				<h2>Full stack MERN Developer</h2>
-				<ul class="actions">
-					<li><a href="#one" class="button scrolly">Portfolio</a></li>
+				<ul class="menu">
+					<li>&copy; Nikita Beznosikov. All rights reserved.</li>
 				</ul>
 			</div>
-		</section>
+		</footer>
 
-		<!-- One -->
-		<section id="one" class="wrapper style2 spotlights">
-			<section>
-				<a href="/buyertool.html" target='_blank' class="image"><img src="images/buyertool.png" alt=""
-						data-position="center center" /></a>
-				<div class="content">
-					<div class="inner">
-						<h2>Web app for Facebook campaigns analytics. (React.js, Bootstrap, Redux etc.)</h2>
-						<ul class="actions">
-							<li><a href="/buyertool.html" target='_blank' class="button">Check it out</a></li>
-						</ul>
-					</div>
-				</div>
-			</section>
-			<section>
-				<a href="https://benz-chat-app.herokuapp.com" target='_blank' class="image"><img src="images/chat.png" alt=""
-						data-position="center center" /></a>
-				<div class="content">
-					<div class="inner">
-						<h2>Chat web app on Node.js, Socket.io and Mustache.js</h2>
-						<ul class="actions">
-							<li><a href="https://benz-chat-app.herokuapp.com" target='_blank' class="button">Check it out</a></li>
-						</ul>
-					</div>
-				</div>
-			</section>
-			<section>
-				<a href="https://github.com/nikbeznosikov/task-manager-api" target='_blank' class="image"><img
-						src="images/tasks.png" alt="" data-position="center center" /></a>
-				<div class="content">
-					<div class="inner">
-						<h2>REST API for CRUD users and tasks. (Node.js, Express, MongoDB, Mongoose)</h2>
-						<ul class="actions">
-							<li><a href="https://github.com/nikbeznosikov/task-manager-api" target='_blank' class="button">Check it
-									out</a></li>
-						</ul>
-					</div>
-				</div>
-			</section>
-			<section>
-				<a href="https://benz-weather-app.herokuapp.com/" target='_blank' class="image"><img src="./images/weather.png"
-						alt="" data-position="center center" /></a>
-				<div class="content">
-					<div class="inner">
-						<h2>Web app allows user to request weather by zip, city or country (Node.js, Mustache.js)</h2>
-						<ul class="actions">
-							<li><a href="https://benz-weather-app.herokuapp.com/" target='_blank' class="button">Check it out</a></li>
-						</ul>
-					</div>
-				</div>
-			</section>
-			<section>
-				<a href="https://soundreliz.com/musician" target='_blank' class="image"><img src="images/soundreliz.png" alt=""
-						data-position="center center" /></a>
-				<div class="content">
-					<div class="inner">
-						<h2>Website for musicians. HTML, CSS, Javascript</h2>
-						<ul class="actions">
-							<li><a href="https://soundreliz.com/musician" target='_blank' class="button">Check it out</a></li>
-						</ul>
-					</div>
-				</div>
-			</section>
-			<section>
-				<a href="https://codepen.io/nikbeznosikov/full/zyqEJo" target='_blank' class="image"><img
-						src="images/quoteMachine.png" alt="" data-position="center center" /></a>
-				<div class="content">
-					<div class="inner">
-						<h2>Random quote machine on React</h2>
-						<ul class="actions">
-							<li><a href="https://codepen.io/nikbeznosikov/full/zyqEJo" target='_blank' class="button">Watch on
-									codepen.io</a></li>
-						</ul>
-					</div>
-				</div>
-			</section>
-			<section>
-				<a href="https://codepen.io/nikbeznosikov/full/YdZOMJ" target='_blank' class="image"><img
-						src="images/markdown.png" alt="" data-position="top center" /></a>
-				<div class="content">
-					<div class="inner">
-						<h2>Realtime markdown preview on React</h2>
-						<ul class="actions">
-							<li><a href="https://codepen.io/nikbeznosikov/full/YdZOMJ" target='_blank' class="button">Watch on
-									codepen.io</a></li>
-						</ul>
-					</div>
-				</div>
-			</section>
-			<section>
-				<a href="https://codepen.io/nikbeznosikov/full/qLXOxw" target='_blank' class="image"><img
-						src="images/drumMachine.png" alt="" data-position="25% 25%" /></a>
-				<div class="content">
-					<div class="inner">
-						<h2>Drum Machine on React</h2>
-						<ul class="actions">
-							<li><a href="https://codepen.io/nikbeznosikov/full/qLXOxw" target='_blank' class="button">Watch on
-									codepen.io</a></li>
-						</ul>
-					</div>
-				</div>
-			</section>
-			<section>
-				<a href="https://codepen.io/nikbeznosikov/full/LqNaaN" target='_blank' class="image"><img
-						src="images/barchart.png" alt="" data-position="25% 25%" /></a>
-				<div class="content">
-					<div class="inner">
-						<h2>Bar chart D3.js</h2>
-						<ul class="actions">
-							<li><a href="https://codepen.io/nikbeznosikov/full/LqNaaN" target='_blank' class="button">Watch on
-									codepen.io</a></li>
-						</ul>
-					</div>
-				</div>
-			</section>
-		</section>
-
-		<!-- Two -->
-		<section id="two" class="wrapper style3 fade-up">
-			<div class="inner">
-				<h2>Skills</h2>
-				<div class="features">
-					<section>
-						<span class="icon major fab fa-html5"></span>
-						<h3>Front End</h3>
-						<p>HTML, CSS, Javascript ES6, React.js, Mustache.js, Sass
-						</p>
-					</section>
-					<section>
-						<span class="icon major fa-cogs"></span>
-						<h3>Back End</h3>
-						<p>Node.js, MongoDB, Express, Mongoose, Socket.io
-						</p>
-					</section>
-					<section>
-						<span class="icon major fa-code"></span>
-						<h3>Development</h3>
-						<p>Jest.js, Git, Scrum, Agile</p>
-					</section>
-					<section>
-						<span class="icon major fa-user"></span>
-						<h3>Personal</h3>
-						<p>Hardworking team player. I comply with the deadlines, suggest ideas and take responsibility</p>
-					</section>
-				</div>
-			</div>
-		</section>
-
-		<!-- Three -->
-		<section id="three" class="wrapper style1 fade-up">
-			<div class="inner">
-				<h2>Contacts</h2>
-				<div class="style1">
-					<section>
-						<ul class="contact">
-							<li>
-								<h3>Address</h3>
-								San Diego, CA 92108, USA
-							</li>
-							<li>
-								<h3>Email</h3>
-								<a href="mailto:nikitabeznosikov@gmail.com">nikitabeznosikov@gmail.com</a>
-							</li>
-							<li>
-								<h3>Social</h3>
-								<ul class="icons">
-									<li><a href="https://www.facebook.com/profile.php?id=100002039286978" target='_blank'
-											class="fa-facebook"><span class="label">Facebook</span></a></li>
-									<li><a href="https://github.com/nikbeznosikov" target='_blank' class="fa-github"><span
-												class="label">GitHub</span></a></li>
-									<li><a href="https://www.linkedin.com/in/nikita-beznosikov/" target='_blank' class="fa-linkedin"><span
-												class="label">LinkedIn</span></a></li>
-									<li><a href="https://codepen.io/nikbeznosikov/" target='_blank' class="fa-codepen"><span
-												class="label">Codepen</span></a></li>
-								</ul>
-							</li>
-						</ul>
-					</section>
-				</div>
-			</div>
-		</section>
-
-	</div>
-
-	<!-- Footer -->
-	<footer id="footer" class="wrapper style1-alt">
-		<div class="inner">
-			<ul class="menu">
-				<li>&copy; Nikita Beznosikov. All rights reserved.</li>
-			</ul>
-		</div>
-	</footer>
-
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-
-</body>
-
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
 </html>
