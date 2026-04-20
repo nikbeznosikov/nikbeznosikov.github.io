@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nikita Beznosikov — Senior Full-Stack Engineer</title>
+    <meta
+      name="description"
+      content="Senior Full-Stack Engineer (9+ years). E-commerce, payments, fraud systems. Built and scaled a $1M/month DTC platform. React, Next.js, TypeScript, Node.js, PostgreSQL."
+    />
+    <meta name="author" content="Nikita Beznosikov" />
+    <meta name="theme-color" content="#0b0c0f" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Nikita Beznosikov — Senior Full-Stack Engineer" />
+    <meta
+      property="og:description"
+      content="9+ years building production systems. Payments, fraud, analytics, checkout. Open to remote senior roles."
+    />
+
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <style>
+      :root {
+        --bg: #0b0c0f;
+        --bg-2: #111317;
+        --card: #14171c;
+        --border: #1f242c;
+        --text: #e7eaf0;
+        --muted: #8b94a3;
+        --accent: #7cc4ff;
+        --accent-2: #a3e3a1;
+        --tag-bg: #1a1f27;
+      }
+      @media (prefers-color-scheme: light) {
+        :root {
+          --bg: #fafafa;
+          --bg-2: #ffffff;
+          --card: #ffffff;
+          --border: #e5e7eb;
+          --text: #0f172a;
+          --muted: #525a6b;
+          --accent: #0a66c2;
+          --accent-2: #0f7a3e;
+          --tag-bg: #f1f3f7;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family:
+          'Inter',
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          sans-serif;
+        font-feature-settings: 'cv11', 'ss01';
+        -webkit-font-smoothing: antialiased;
+        line-height: 1.55;
+      }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .wrap {
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 56px 24px 80px;
+      }
+      header.hero {
+        margin-bottom: 48px;
+      }
+      .eyebrow {
+        color: var(--muted);
+        font-size: 13px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 14px;
+      }
+      h1 {
+        font-size: clamp(28px, 4.4vw, 40px);
+        line-height: 1.15;
+        margin: 0 0 14px;
+        letter-spacing: -0.02em;
+      }
+      .lede {
+        font-size: 17px;
+        color: var(--muted);
+        max-width: 64ch;
+        margin: 0 0 22px;
+      }
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 18px;
+        color: var(--muted);
+        font-size: 14px;
+        margin-bottom: 22px;
+      }
+      .meta span::before {
+        content: '·';
+        margin-right: 18px;
+        color: var(--border);
+      }
+      .meta span:first-child::before {
+        content: '';
+        margin: 0;
+      }
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 9px 14px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--bg-2);
+        color: var(--text);
+        font-size: 14px;
+        font-weight: 500;
+      }
+      .btn:hover {
+        border-color: var(--accent);
+        text-decoration: none;
+      }
+      .btn.primary {
+        background: var(--accent);
+        color: #0b0c0f;
+        border-color: var(--accent);
+      }
+
+      h2 {
+        font-size: 13px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin: 56px 0 18px;
+        font-weight: 600;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+      @media (max-width: 720px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 22px;
+        display: flex;
+        flex-direction: column;
+        transition:
+          border-color 0.15s ease,
+          transform 0.15s ease;
+      }
+      .card:hover {
+        border-color: var(--accent);
+      }
+      .card h3 {
+        margin: 0 0 6px;
+        font-size: 17px;
+        letter-spacing: -0.01em;
+      }
+      .card p {
+        color: var(--muted);
+        font-size: 14.5px;
+        margin: 0 0 14px;
+        flex: 1;
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 16px;
+      }
+      .tag {
+        font-size: 11.5px;
+        background: var(--tag-bg);
+        color: var(--muted);
+        padding: 3px 8px;
+        border-radius: 4px;
+        letter-spacing: 0.01em;
+      }
+      .card-links {
+        display: flex;
+        gap: 14px;
+        font-size: 13.5px;
+      }
+      .card-links a {
+        color: var(--accent);
+      }
+
+      .exp {
+        border-left: 2px solid var(--border);
+        padding-left: 18px;
+        margin-bottom: 22px;
+      }
+      .exp h3 {
+        margin: 0 0 4px;
+        font-size: 16px;
+      }
+      .exp .when {
+        color: var(--muted);
+        font-size: 13px;
+        margin-bottom: 10px;
+      }
+      .exp ul {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--muted);
+        font-size: 14.5px;
+      }
+      .exp ul li {
+        margin-bottom: 4px;
+      }
+
+      .stack {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        gap: 8px 20px;
+        font-size: 14.5px;
+      }
+      .stack dt {
+        color: var(--muted);
+      }
+      .stack dd {
+        margin: 0;
+      }
+
+      footer {
+        margin-top: 64px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+        color: var(--muted);
+        font-size: 13px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="hero">
+        <div class="eyebrow">Senior Full-Stack Engineer</div>
+        <h1>Nikita Beznosikov</h1>
+        <p class="lede">
+          9+ years building production systems end-to-end. 6 years as the sole engineer on a DTC e-commerce
+          platform that peaked at ~$1M/month — checkout, multi-provider payments, fraud prevention, and the
+          analytics pipeline behind it. Open to remote senior roles.
+        </p>
+        <div class="meta">
+          <span>Madrid, Spain</span>
+          <span>Open to remote</span>
+          <span>EU work authorisation</span>
+        </div>
+        <div class="links">
+          <a class="btn" href="https://www.linkedin.com/in/nikitabeznosikov" target="_blank" rel="noopener"
+            >LinkedIn</a
+          >
+          <a class="btn" href="https://github.com/nikbeznosikov" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </header>
+
+      <h2>Selected work — public demos</h2>
+      <p style="color: var(--muted); font-size: 14.5px; margin: -6px 0 18px; max-width: 64ch">
+        Four small, focused projects. Each one isolates a single production concern — payments, APIs,
+        analytics, AI — and ships with tests, security headers, and a live deployment.
+      </p>
+
+      <section class="grid">
+        <article class="card">
+          <h3>Payment System Demo</h3>
+          <p>
+            Multi-provider checkout exercising retry with exponential backoff + jitter, provider fallback,
+            idempotency-key response cache, an order state machine, and Stripe webhook signature verification.
+            UI streams every attempt over SSE.
+          </p>
+          <div class="tags">
+            <span class="tag">Node 20</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Express</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Stripe</span>
+            <span class="tag">SSE</span>
+            <span class="tag">Vitest</span>
+          </div>
+          <div class="card-links">
+            <a href="https://web-production-dcad7.up.railway.app/" target="_blank" rel="noopener"
+              >Live demo →</a
+            >
+            <a href="https://github.com/nikbeznosikov/payment-system-demo" target="_blank" rel="noopener"
+              >Source →</a
+            >
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Backend Architecture Template</h3>
+          <p>
+            REST API template with layered architecture (routes → controllers → services → repositories), JWT
+            auth with refresh-token rotation + reuse detection, transactional order creation under
+            <code>Serializable</code> isolation, and Zod-generated OpenAPI docs.
+          </p>
+          <div class="tags">
+            <span class="tag">Node 20</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Express</span>
+            <span class="tag">Prisma</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Zod</span>
+            <span class="tag">OpenAPI</span>
+          </div>
+          <div class="card-links">
+            <a
+              href="https://backend-architecture-template-production.up.railway.app"
+              target="_blank"
+              rel="noopener"
+              >Live demo →</a
+            >
+            <a
+              href="https://backend-architecture-template-production.up.railway.app/docs"
+              target="_blank"
+              rel="noopener"
+              >Swagger →</a
+            >
+            <a
+              href="https://github.com/nikbeznosikov/backend-architecture-template"
+              target="_blank"
+              rel="noopener"
+              >Source →</a
+            >
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Atlas — Analytics Dashboard</h3>
+          <p>
+            Read-only e-commerce dashboard over 50,000 synthetic orders and a ~105k-point revenue series: KPIs
+            with period-over-period deltas, downsampled time series, virtualized orders table with server-side
+            sort/filter, and a product browser.
+          </p>
+          <div class="tags">
+            <span class="tag">Next.js 16</span>
+            <span class="tag">React 19</span>
+            <span class="tag">TanStack Query</span>
+            <span class="tag">TanStack Virtual</span>
+            <span class="tag">Recharts</span>
+            <span class="tag">Tailwind v4</span>
+            <span class="tag">Radix UI</span>
+          </div>
+          <div class="card-links">
+            <a href="https://analytics-dashboard-demo-khaki.vercel.app" target="_blank" rel="noopener"
+              >Live demo →</a
+            >
+            <a href="https://github.com/nikbeznosikov/analytics-dashboard-demo" target="_blank" rel="noopener"
+              >Source →</a
+            >
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Review Analyzer (AI)</h3>
+          <p>
+            Small AI demo. Sends a bounded review set to Gemini and returns a Zod-validated, structured
+            sentiment breakdown — overall sentiment, themes, suggested actions. Cloudflare Turnstile in front
+            to keep the cost surface predictable.
+          </p>
+          <div class="tags">
+            <span class="tag">Next.js 16</span>
+            <span class="tag">React 19</span>
+            <span class="tag">Gemini</span>
+            <span class="tag">Zod</span>
+            <span class="tag">Turnstile</span>
+            <span class="tag">Tailwind</span>
+          </div>
+          <div class="card-links">
+            <a href="https://ai-feature-demo.vercel.app/" target="_blank" rel="noopener">Live demo →</a>
+            <a href="https://github.com/nikbeznosikov/ai-feature-demo" target="_blank" rel="noopener"
+              >Source →</a
+            >
+          </div>
+        </article>
+      </section>
+
+      <h2>Experience</h2>
+
+      <div class="exp">
+        <h3>Senior Full-Stack Engineer · Launchify Ventures</h3>
+        <div class="when">2020 – Present · Remote (US)</div>
+        <ul>
+          <li>Sole engineer on a DTC e-commerce platform; peak revenue ~$1M/month.</li>
+          <li>Re-architected a PHP/Laravel monolith into a Next.js + Node.js + MongoDB platform.</li>
+          <li>
+            Designed multi-provider payments (Stripe, Braintree, PayPal, Apple/Google Pay) with routing,
+            retries, and failover.
+          </li>
+          <li>
+            Built fraud / carding prevention (rule engine, IP blocking) and integrated Visa CDRN with
+            automated chargeback workflows.
+          </li>
+          <li>
+            Built server-side tracking (FB CAPI, Google Ads), GTM consent flows, and a BigQuery analytics
+            pipeline.
+          </li>
+          <li>Cut video infrastructure cost ~99% by migrating from AWS S3 to Cloudflare Stream.</li>
+        </ul>
+      </div>
+
+      <div class="exp">
+        <h3>Frontend Engineer · Sinlao Media</h3>
+        <div class="when">2019 – 2020</div>
+        <ul>
+          <li>React + Redux analytics dashboard for media-buying decisions.</li>
+        </ul>
+      </div>
+
+      <div class="exp">
+        <h3>Frontend Engineer · IQ Option</h3>
+        <div class="when">2016 – 2019</div>
+        <ul>
+          <li>
+            Real-time monitoring system in React + WebSockets, optimised for high-frequency fintech data.
+          </li>
+        </ul>
+      </div>
+
+      <h2>Stack</h2>
+      <dl class="stack">
+        <dt>Frontend</dt>
+        <dd>React, Next.js, TypeScript, Tailwind</dd>
+        <dt>Backend</dt>
+        <dd>Node.js, Express, GraphQL</dd>
+        <dt>Databases</dt>
+        <dd>PostgreSQL, MongoDB, Prisma</dd>
+        <dt>Infra</dt>
+        <dd>Cloudflare (Workers, Stream, DNS), AWS, DigitalOcean, Railway, Vercel</dd>
+        <dt>Payments</dt>
+        <dd>Stripe, Braintree, PayPal, Apple/Google Pay, Visa CDRN</dd>
+        <dt>Analytics</dt>
+        <dd>BigQuery, Facebook CAPI, GTM, Google Sheets API</dd>
+        <dt>Testing</dt>
+        <dd>Vitest, Playwright, Cypress</dd>
+        <dt>Mobile</dt>
+        <dd>React Native (published iOS app)</dd>
+      </dl>
+
+      <footer>
+        <span>© <span id="year"></span> Nikita Beznosikov</span>
+      </footer>
+    </main>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
