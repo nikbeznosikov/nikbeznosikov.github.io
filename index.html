@@ -1,478 +1,1356 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nikita Beznosikov — Senior Full-Stack Engineer</title>
     <meta
       name="description"
-      content="Senior Full-Stack Engineer (9+ years). E-commerce, payments, fraud systems. Built and scaled a $1M/month DTC platform. React, Next.js, TypeScript, Node.js, PostgreSQL."
+      content="Senior Full-Stack Engineer (9+ years). DTC e-commerce, checkout, payments, and fraud systems. Sole engineer on a ~$1M/month platform handling 1,000+ orders/day."
     />
     <meta name="author" content="Nikita Beznosikov" />
-    <meta name="theme-color" content="#0b0c0f" />
-
-    <!-- Open Graph -->
+    <meta name="theme-color" content="#ffffff" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Nikita Beznosikov — Senior Full-Stack Engineer" />
     <meta
       property="og:description"
-      content="9+ years building production systems. Payments, fraud, analytics, checkout. Open to remote senior roles."
+      content="9+ years building production systems. DTC e-commerce, checkout, payments, fraud prevention, experimentation, and analytics. Open to remote senior roles."
     />
-
-    <link rel="preconnect" href="https://rsms.me/" />
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
     <style>
       :root {
-        --bg: #0b0c0f;
-        --bg-2: #111317;
-        --card: #14171c;
-        --border: #1f242c;
-        --text: #e7eaf0;
-        --muted: #8b94a3;
-        --accent: #7cc4ff;
-        --accent-2: #a3e3a1;
-        --tag-bg: #1a1f27;
+        --hand-rule-height: 14px;
+        --hand-rule-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 860 14' preserveAspectRatio='none'%3E%3Cpath d='M0 7 C60 2 120 12 180 7 C240 2 300 12 360 7 C420 2 480 12 540 7 C600 2 660 12 720 7 C780 2 840 12 860 7' fill='none' stroke='%23000' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
       }
-      @media (prefers-color-scheme: light) {
-        :root {
-          --bg: #fafafa;
-          --bg-2: #ffffff;
-          --card: #ffffff;
-          --border: #e5e7eb;
-          --text: #0f172a;
-          --muted: #525a6b;
-          --accent: #0a66c2;
-          --accent-2: #0f7a3e;
-          --tag-bg: #f1f3f7;
-        }
-      }
-      * {
+
+      *,
+      *::before,
+      *::after {
         box-sizing: border-box;
-      }
-      html,
-      body {
         margin: 0;
         padding: 0;
-        background: var(--bg);
-        color: var(--text);
-        font-family:
-          'Inter',
-          system-ui,
-          -apple-system,
-          Segoe UI,
-          Roboto,
-          sans-serif;
-        font-feature-settings: 'cv11', 'ss01';
-        -webkit-font-smoothing: antialiased;
-        line-height: 1.55;
       }
-      a {
-        color: var(--accent);
-        text-decoration: none;
+
+      html {
+        cursor: none;
+        scroll-behavior: smooth;
       }
-      a:hover {
-        text-decoration: underline;
+
+      body {
+        background: #fff;
+        color: #000;
+        font-family: 'Caveat', cursive;
+        overflow-x: hidden;
       }
-      .wrap {
-        max-width: 920px;
+
+      /* ── CURSOR ── */
+      #cur {
+        position: fixed;
+        width: 12px;
+        height: 12px;
+        border: 1.5px solid #000;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-50%, -50%);
+        transition: transform 0.12s;
+      }
+      #cur.big {
+        transform: translate(-50%, -50%) scale(3);
+        border-width: 1px;
+      }
+
+      /* ── LAYOUT ── */
+      .page {
+        max-width: 860px;
         margin: 0 auto;
-        padding: 56px 24px 80px;
+        padding: 0 48px;
       }
-      header.hero {
-        margin-bottom: 48px;
+
+      /* ── SECTIONS ── */
+      section {
+        padding: 120px 0;
+        position: relative;
       }
-      .eyebrow {
-        color: var(--muted);
-        font-size: 13px;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        margin-bottom: 14px;
-      }
-      h1 {
-        font-size: clamp(28px, 4.4vw, 40px);
-        line-height: 1.15;
-        margin: 0 0 14px;
-        letter-spacing: -0.02em;
-      }
-      .lede {
-        font-size: 17px;
-        color: var(--muted);
-        max-width: 64ch;
-        margin: 0 0 22px;
-      }
-      .meta {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px 18px;
-        color: var(--muted);
-        font-size: 14px;
-        margin-bottom: 22px;
-      }
-      .meta span::before {
-        content: '·';
-        margin-right: 18px;
-        color: var(--border);
-      }
-      .meta span:first-child::before {
+      section::after,
+      .project::after,
+      .project:first-child::before,
+      .exp-item::after,
+      .exp-item:first-child::before,
+      .education-item::after,
+      .education-item:first-child::before {
         content: '';
-        margin: 0;
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: var(--hand-rule-height);
+        background-image: var(--hand-rule-image);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: left center;
+        pointer-events: none;
       }
-      .links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
+      section::after,
+      .project::after,
+      .exp-item::after,
+      .education-item::after {
+        bottom: 0;
       }
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 9px 14px;
-        border: 1px solid var(--border);
-        border-radius: 8px;
-        background: var(--bg-2);
-        color: var(--text);
-        font-size: 14px;
-        font-weight: 500;
+      .project:first-child::before,
+      .exp-item:first-child::before,
+      .education-item:first-child::before {
+        top: 0;
       }
-      .btn:hover {
-        border-color: var(--accent);
-        text-decoration: none;
+      section:last-child {
+        padding-bottom: 0;
       }
-      .btn.primary {
-        background: var(--accent);
-        color: #0b0c0f;
-        border-color: var(--accent);
+      section:last-child::after,
+      #work::after,
+      #experience::after,
+      #education::after {
+        display: none;
+      }
+      #work,
+      #experience,
+      #education {
+        padding-bottom: 0;
       }
 
-      h2 {
-        font-size: 13px;
-        letter-spacing: 0.1em;
+      /* ── SVG DRAWN HEADINGS ── */
+      .drawn-svg {
+        display: block;
+        width: 100%;
+        height: auto;
+        overflow: visible;
+        margin-bottom: 52px;
+      }
+      .drawn-inline-title {
+        width: 100%;
+        max-width: var(--title-width);
+        height: auto;
+        margin-bottom: 0;
+      }
+      .hero-name-svg {
+        max-width: 760px;
+      }
+      .hero-name-mobile {
+        display: none;
+      }
+      .section-title-svg {
+        max-width: 430px;
+      }
+      .hero-underline {
+        max-width: 560px;
+      }
+      #experience .section-title-svg {
+        max-width: 330px;
+      }
+      #stack .section-title-svg {
+        max-width: 180px;
+      }
+      #contact .section-title-svg {
+        max-width: 280px;
+      }
+      #education .section-title-svg {
+        max-width: 320px;
+      }
+      .drawn-text {
+        fill: none;
+        stroke: #000;
+        stroke-width: 1.2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        font-family: 'Caveat', cursive;
+        font-weight: 700;
+      }
+      .drawn-text.ready {
+        stroke-dasharray: var(--len);
+        stroke-dashoffset: var(--len);
+        transition: stroke-dashoffset 1.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .drawn-text.drawn {
+        stroke-dashoffset: 0;
+      }
+
+      /* filled variant (after draw completes, fill fades in) */
+      .drawn-text-fill {
+        fill: #000;
+        stroke: none;
+        font-family: 'Caveat', cursive;
+        font-weight: 700;
+        opacity: 0;
+        transition: opacity 0.5s ease 1.6s;
+      }
+      .drawn-text-fill.drawn {
+        opacity: 1;
+      }
+
+      /* ── SECTION LABEL ── */
+      .sec-label {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.18em;
         text-transform: uppercase;
-        color: var(--muted);
-        margin: 56px 0 18px;
-        font-weight: 600;
+        color: #000;
+        margin-bottom: 48px;
+        opacity: 0.35;
       }
 
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 16px;
+      /* ── HANDWRITTEN BODY ── */
+      .hw {
+        font-family: 'Caveat', cursive;
+        font-size: 22px;
+        line-height: 1.7;
+        color: #000;
       }
-      @media (max-width: 720px) {
-        .grid {
-          grid-template-columns: 1fr;
-        }
+      .hw-line {
+        display: block;
+        overflow: hidden;
+        clip-path: inset(0 100% 0 0);
+        transition: clip-path 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .hw-line.drawn {
+        clip-path: inset(0 0% 0 0);
       }
 
-      .card {
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        padding: 22px;
+      /* ── UNDERLINE DRAW ── */
+      .underline-svg {
+        display: block;
+        width: 100%;
+        height: auto;
+        overflow: visible;
+        margin-top: -6px;
+        margin-bottom: 32px;
+      }
+      .ul-path {
+        fill: none;
+        stroke: #000;
+        stroke-width: 1.5;
+        stroke-linecap: round;
+      }
+      .ul-path.ready {
+        stroke-dasharray: var(--len);
+        stroke-dashoffset: var(--len);
+        transition: stroke-dashoffset 1s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+      }
+      .ul-path.drawn {
+        stroke-dashoffset: 0;
+      }
+
+      /* ── PROJECTS ── */
+      .project-list {
         display: flex;
         flex-direction: column;
-        transition:
-          border-color 0.15s ease,
-          transform 0.15s ease;
       }
-      .card:hover {
-        border-color: var(--accent);
+      .work-intro {
+        max-width: 680px;
+        margin: -10px 0 28px;
+        font-size: 18px;
+        line-height: 1.65;
+        color: #333;
       }
-      .card h3 {
-        margin: 0 0 6px;
-        font-size: 17px;
-        letter-spacing: -0.01em;
+      .project {
+        padding: 36px 0;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 0 32px;
+        align-items: start;
+        position: relative;
       }
-      .card p {
-        color: var(--muted);
-        font-size: 14.5px;
-        margin: 0 0 14px;
-        flex: 1;
+      .project:first-child {
+        padding-top: 28px;
       }
-      .tags {
+      .proj-title {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        line-height: 1.1;
+      }
+      .proj-desc {
+        font-size: 18px;
+        line-height: 1.65;
+        color: #444;
+        max-width: 600px;
+      }
+      .proj-tags {
         display: flex;
         flex-wrap: wrap;
         gap: 6px;
-        margin-bottom: 16px;
+        margin-top: 14px;
       }
-      .tag {
-        font-size: 11.5px;
-        background: var(--tag-bg);
-        color: var(--muted);
+      .proj-tag {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 9px;
+        letter-spacing: 0.05em;
+        border: 1px solid #000;
         padding: 3px 8px;
-        border-radius: 4px;
-        letter-spacing: 0.01em;
+        color: #000;
       }
-      .card-links {
+      .proj-links {
         display: flex;
-        gap: 14px;
-        font-size: 13.5px;
+        flex-direction: column;
+        gap: 8px;
+        text-align: right;
+        padding-top: 4px;
       }
-      .card-links a {
-        color: var(--accent);
+      .proj-link {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+        color: #000;
+        text-decoration: none;
+        letter-spacing: 0.05em;
+        opacity: 0.5;
+        transition: opacity 0.2s;
+      }
+      .proj-link:hover {
+        opacity: 1;
       }
 
-      .exp {
-        border-left: 2px solid var(--border);
-        padding-left: 18px;
+      /* ── EXP ── */
+      .exp-item {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        gap: 0 48px;
+        padding: 48px 0;
+        position: relative;
+      }
+      .exp-item:first-child {
+        padding-top: 40px;
+      }
+      .exp-date {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+        opacity: 0.4;
+        padding-top: 8px;
+        line-height: 2;
+      }
+      .exp-company {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 4px;
+        line-height: 1.1;
+      }
+      .exp-role {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+        opacity: 0.5;
+        letter-spacing: 0.06em;
         margin-bottom: 22px;
       }
-      .exp h3 {
-        margin: 0 0 4px;
-        font-size: 16px;
-      }
-      .exp .when {
-        color: var(--muted);
-        font-size: 13px;
-        margin-bottom: 10px;
-      }
-      .exp ul {
-        margin: 0;
-        padding-left: 18px;
-        color: var(--muted);
-        font-size: 14.5px;
-      }
-      .exp ul li {
-        margin-bottom: 4px;
-      }
-
-      .stack {
-        display: grid;
-        grid-template-columns: 140px 1fr;
-        gap: 8px 20px;
-        font-size: 14.5px;
-      }
-      .stack dt {
-        color: var(--muted);
-      }
-      .stack dd {
-        margin: 0;
-      }
-
-      footer {
-        margin-top: 64px;
-        padding-top: 24px;
-        border-top: 1px solid var(--border);
-        color: var(--muted);
-        font-size: 13px;
+      .exp-bullets {
+        list-style: none;
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .exp-bullets li {
+        font-size: 19px;
+        line-height: 1.65;
+        color: #333;
+        padding-left: 18px;
+        position: relative;
+      }
+      .exp-bullets li::before {
+        content: '—';
+        position: absolute;
+        left: 0;
+        opacity: 0.3;
+      }
+
+      /* ── STACK ── */
+      .stack-list {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+      .stack-row {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        gap: 0 48px;
+        align-items: baseline;
+      }
+      .stack-cat {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+        opacity: 0.4;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .stack-items {
+        font-size: 20px;
+        line-height: 1.6;
+      }
+
+      /* ── EDUCATION ── */
+      .education-item {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        gap: 0 48px;
+        padding: 28px 0;
+        position: relative;
+      }
+      .education-item:first-child {
+        padding-top: 20px;
+      }
+      .education-meta {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+        opacity: 0.4;
+        padding-top: 6px;
+        line-height: 1.8;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .education-title {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 6px;
+      }
+      .education-school {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      /* ── CONTACT ── */
+      .contact-email {
+        font-size: clamp(32px, 5vw, 64px);
+        font-weight: 700;
+        color: #000;
+        text-decoration: none;
+        display: block;
+        line-height: 1.1;
+        margin-bottom: 40px;
+        word-break: break-word;
+        transition: opacity 0.2s;
+      }
+      .contact-email:hover {
+        opacity: 0.5;
+      }
+      .contact-note {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+        color: #000;
+        letter-spacing: 0.08em;
+        line-height: 1.8;
+        opacity: 0.45;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+      }
+      .contact-links {
+        display: flex;
+        gap: 36px;
+      }
+      .contact-link {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        color: #000;
+        text-decoration: none;
+        letter-spacing: 0.07em;
+        opacity: 0.4;
+        transition: opacity 0.2s;
+      }
+      .contact-link:hover {
+        opacity: 1;
+      }
+
+      /* ── HERO ── */
+      #hero {
+        padding-top: 160px;
+        padding-bottom: 120px;
+      }
+      .hero-sub {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        opacity: 0.4;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        margin-bottom: 28px;
+      }
+      .hero-meta {
+        margin-top: 52px;
+        display: flex;
+        gap: 36px;
         flex-wrap: wrap;
-        gap: 12px;
+      }
+      .hero-meta span {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+        opacity: 0.4;
+        letter-spacing: 0.08em;
+      }
+
+      /* ── REVEAL FADE ── */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(12px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+      .fade-in.drawn {
+        opacity: 1;
+        transform: none;
+      }
+
+      /* ── SCROLL INDICATOR ── */
+      .scroll-ind {
+        position: fixed;
+        bottom: 32px;
+        right: 48px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 9px;
+        letter-spacing: 0.12em;
+        opacity: 0.25;
+        writing-mode: vertical-rl;
+      }
+
+      @media (max-width: 760px) {
+        html {
+          cursor: auto;
+        }
+
+        #cur,
+        .scroll-ind {
+          display: none;
+        }
+
+        .page {
+          padding: 0 20px;
+        }
+
+        section {
+          padding: 72px 0;
+        }
+
+        #hero {
+          padding-top: 92px;
+          padding-bottom: 72px;
+        }
+
+        .drawn-svg {
+          margin-bottom: 26px;
+        }
+
+        .drawn-inline-title {
+          margin-bottom: 0;
+        }
+
+        .hero-name-desktop {
+          display: none;
+        }
+
+        .hero-name-mobile {
+          display: block;
+          max-width: 360px;
+        }
+
+        .underline-svg {
+          margin-top: 2px;
+          margin-bottom: 22px;
+        }
+
+        .hero-sub,
+        .sec-label {
+          font-size: 10px;
+          letter-spacing: 0.14em;
+          margin-bottom: 18px;
+        }
+
+        .hw {
+          font-size: 24px;
+          line-height: 1.45;
+        }
+
+        .hero-meta {
+          margin-top: 28px;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+        }
+
+        .hero-meta span,
+        .exp-date,
+        .exp-role,
+        .stack-cat,
+        .education-meta,
+        .proj-link,
+        .contact-link {
+          font-size: 10px;
+          letter-spacing: 0.08em;
+        }
+
+        .work-intro,
+        .proj-desc,
+        .exp-bullets li,
+        .stack-items,
+        .education-school {
+          font-size: 18px;
+          line-height: 1.5;
+        }
+
+        .proj-title,
+        .exp-company,
+        .education-title {
+          font-size: 24px;
+        }
+
+        .project,
+        .exp-item,
+        .education-item {
+          padding: 28px 0;
+        }
+
+        .project:first-child,
+        .exp-item:first-child,
+        .education-item:first-child {
+          padding-top: 20px;
+        }
+
+        .project,
+        .exp-item,
+        .stack-row,
+        .education-item {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+
+        .proj-tags {
+          gap: 8px;
+          margin-top: 12px;
+        }
+
+        .proj-tag {
+          font-size: 9px;
+          padding: 4px 7px;
+        }
+
+        .proj-links {
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 10px 14px;
+          text-align: left;
+          padding-top: 0;
+        }
+
+        .contact-links {
+          gap: 12px 18px;
+          flex-wrap: wrap;
+        }
+
+        .exp-date {
+          padding-top: 0;
+          line-height: 1.6;
+        }
+
+        .education-meta {
+          padding-top: 0;
+          line-height: 1.6;
+        }
+
+        .exp-role {
+          margin-bottom: 14px;
+        }
+
+        .stack-list {
+          gap: 18px;
+        }
+
+        .stack-row {
+          gap: 6px;
+        }
+
+        .contact-email {
+          max-width: 12ch;
+          margin-bottom: 24px;
+          font-size: clamp(28px, 11vw, 42px);
+          line-height: 1.02;
+        }
+
+        #contact p[style] {
+          margin-top: 56px !important;
+        }
+      }
+
+      @media (max-width: 420px) {
+        .page {
+          padding: 0 16px;
+        }
+
+        section {
+          padding: 64px 0;
+        }
+
+        #hero {
+          padding-top: 84px;
+          padding-bottom: 64px;
+        }
+
+        .hw {
+          font-size: 21px;
+        }
+
+        .work-intro,
+        .proj-desc,
+        .exp-bullets li,
+        .stack-items,
+        .education-school {
+          font-size: 17px;
+        }
+
+        .proj-title,
+        .exp-company,
+        .education-title {
+          font-size: 22px;
+        }
+
+        .contact-email {
+          font-size: 30px;
+        }
       }
     </style>
   </head>
   <body>
-    <main class="wrap">
-      <header class="hero">
-        <div class="eyebrow">Senior Full-Stack Engineer</div>
-        <h1>Nikita Beznosikov</h1>
-        <p class="lede">
-          9+ years building production systems end-to-end. 6 years as the sole engineer on a DTC e-commerce
-          platform that peaked at ~$1M/month — checkout, multi-provider payments, fraud prevention, and the
-          analytics pipeline behind it. Open to remote senior roles.
-        </p>
-        <div class="meta">
-          <span>Madrid, Spain</span>
-          <span>Open to remote</span>
-          <span>EU work authorisation</span>
-        </div>
-        <div class="links">
-          <a class="btn" href="https://www.linkedin.com/in/nikita-beznosikov/" target="_blank" rel="noopener"
-            >LinkedIn</a
+    <div id="cur"></div>
+    <div class="scroll-ind">SCROLL</div>
+
+    <div class="page">
+      <!-- HERO -->
+      <section id="hero" data-screen-label="01 Hero">
+        <p class="hero-sub fade-in">Senior Full-Stack Engineer</p>
+
+        <!-- Big drawn name -->
+        <svg
+          class="drawn-svg hero-name-svg hero-name-desktop"
+          viewBox="0 0 920 160"
+          preserveAspectRatio="xMinYMid meet"
+          aria-label="Nikita Beznosikov"
+        >
+          <text class="drawn-text" x="0" y="130" font-size="148">Nikita Beznosikov</text>
+          <text class="drawn-text-fill" x="0" y="130" font-size="148">Nikita Beznosikov</text>
+        </svg>
+
+        <svg
+          class="drawn-svg hero-name-svg hero-name-mobile"
+          viewBox="0 0 560 300"
+          preserveAspectRatio="xMinYMid meet"
+          aria-label="Nikita Beznosikov"
+        >
+          <text class="drawn-text" x="0" y="115" font-size="148">Nikita</text>
+          <text class="drawn-text" x="0" y="255" font-size="148">Beznosikov</text>
+          <text class="drawn-text-fill" x="0" y="115" font-size="148">Nikita</text>
+          <text class="drawn-text-fill" x="0" y="255" font-size="148">Beznosikov</text>
+        </svg>
+
+        <!-- wavy underline -->
+        <svg class="underline-svg hero-underline" viewBox="0 0 860 14" preserveAspectRatio="xMinYMid meet">
+          <path
+            class="ul-path"
+            d="M0,7 C60,2 120,12 180,7 C240,2 300,12 360,7 C420,2 480,12 540,7 C600,2 660,12 720,7 C780,2 840,12 860,7"
+          />
+        </svg>
+
+        <div class="hw fade-in" style="max-width: 680px; transition-delay: 0.2s">
+          <span class="hw-line">9+ years building production systems end to end.</span>
+          <span class="hw-line" style="transition-delay: 0.12s"
+            >6 of them as the sole engineer on a US DTC platform,</span
           >
-          <a class="btn" href="https://github.com/nikbeznosikov" target="_blank" rel="noopener">GitHub</a>
+          <span class="hw-line" style="transition-delay: 0.24s"
+            >peaking at ~$1M/month and 1,000+ orders/day. Checkout,</span
+          >
+          <span class="hw-line" style="transition-delay: 0.36s"
+            >multi-provider payments, fraud prevention, experimentation,</span
+          >
+          <span class="hw-line" style="transition-delay: 0.48s">and analytics pipelines — end to end.</span>
         </div>
-      </header>
 
-      <h2>Selected work — public demos</h2>
-      <p style="color: var(--muted); font-size: 14.5px; margin: -6px 0 18px; max-width: 64ch">
-        Four small, focused projects. Each one isolates a single production concern — payments, APIs,
-        analytics, AI — and ships with tests, security headers, and a live deployment.
-      </p>
-
-      <section class="grid">
-        <article class="card">
-          <h3>Payment System Demo</h3>
-          <p>
-            Multi-provider checkout exercising retry with exponential backoff + jitter, provider fallback,
-            idempotency-key response cache, an order state machine, and Stripe webhook signature verification.
-            UI streams every attempt over SSE.
-          </p>
-          <div class="tags">
-            <span class="tag">Node 20</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">Express</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">Stripe</span>
-            <span class="tag">SSE</span>
-            <span class="tag">Vitest</span>
-          </div>
-          <div class="card-links">
-            <a href="https://web-production-dcad7.up.railway.app/" target="_blank" rel="noopener"
-              >Live demo →</a
-            >
-            <a href="https://github.com/nikbeznosikov/payment-system-demo" target="_blank" rel="noopener"
-              >Source →</a
-            >
-          </div>
-        </article>
-
-        <article class="card">
-          <h3>Backend Architecture Template</h3>
-          <p>
-            REST API template with layered architecture (routes → controllers → services → repositories), JWT
-            auth with refresh-token rotation + reuse detection, transactional order creation under
-            <code>Serializable</code> isolation, and Zod-generated OpenAPI docs.
-          </p>
-          <div class="tags">
-            <span class="tag">Node 20</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">Express</span>
-            <span class="tag">Prisma</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">Zod</span>
-            <span class="tag">OpenAPI</span>
-          </div>
-          <div class="card-links">
-            <a
-              href="https://backend-architecture-template-production.up.railway.app"
-              target="_blank"
-              rel="noopener"
-              >Live demo →</a
-            >
-            <a
-              href="https://backend-architecture-template-production.up.railway.app/docs"
-              target="_blank"
-              rel="noopener"
-              >Swagger →</a
-            >
-            <a
-              href="https://github.com/nikbeznosikov/backend-architecture-template"
-              target="_blank"
-              rel="noopener"
-              >Source →</a
-            >
-          </div>
-        </article>
-
-        <article class="card">
-          <h3>Atlas — Analytics Dashboard</h3>
-          <p>
-            Read-only e-commerce dashboard over 50,000 synthetic orders and a ~105k-point revenue series: KPIs
-            with period-over-period deltas, downsampled time series, virtualized orders table with server-side
-            sort/filter, and a product browser.
-          </p>
-          <div class="tags">
-            <span class="tag">Next.js 16</span>
-            <span class="tag">React 19</span>
-            <span class="tag">TanStack Query</span>
-            <span class="tag">TanStack Virtual</span>
-            <span class="tag">Recharts</span>
-            <span class="tag">Tailwind v4</span>
-            <span class="tag">Radix UI</span>
-          </div>
-          <div class="card-links">
-            <a href="https://analytics-dashboard-demo-khaki.vercel.app" target="_blank" rel="noopener"
-              >Live demo →</a
-            >
-            <a href="https://github.com/nikbeznosikov/analytics-dashboard-demo" target="_blank" rel="noopener"
-              >Source →</a
-            >
-          </div>
-        </article>
-
-        <article class="card">
-          <h3>Review Analyzer (AI)</h3>
-          <p>
-            Small AI demo. Sends a bounded review set to Gemini and returns a Zod-validated, structured
-            sentiment breakdown — overall sentiment, themes, suggested actions. Cloudflare Turnstile in front
-            to keep the cost surface predictable.
-          </p>
-          <div class="tags">
-            <span class="tag">Next.js 16</span>
-            <span class="tag">React 19</span>
-            <span class="tag">Gemini</span>
-            <span class="tag">Zod</span>
-            <span class="tag">Turnstile</span>
-            <span class="tag">Tailwind</span>
-          </div>
-          <div class="card-links">
-            <a href="https://ai-feature-demo.vercel.app/" target="_blank" rel="noopener">Live demo →</a>
-            <a href="https://github.com/nikbeznosikov/ai-feature-demo" target="_blank" rel="noopener"
-              >Source →</a
-            >
-          </div>
-        </article>
+        <div class="hero-meta fade-in" style="transition-delay: 0.4s">
+          <span>Madrid, Spain</span>
+          <span>Remote</span>
+          <span>EU work authorization</span>
+          <span>B2B contract / EOR</span>
+        </div>
       </section>
 
-      <h2>Experience</h2>
+      <!-- WORK -->
+      <section id="work" data-screen-label="02 Work">
+        <p class="sec-label">02 / Work</p>
 
-      <div class="exp">
-        <h3>Senior Full-Stack Engineer · Launchify Ventures</h3>
-        <div class="when">2020 – Present · Remote (US)</div>
-        <ul>
-          <li>Sole engineer on a DTC e-commerce platform; peak revenue ~$1M/month.</li>
-          <li>Re-architected a PHP/Laravel monolith into a Next.js + Node.js + MongoDB platform.</li>
-          <li>
-            Designed multi-provider payments (Stripe, Braintree, PayPal, Apple/Google Pay) with routing,
-            retries, and failover.
-          </li>
-          <li>
-            Built fraud / carding prevention (rule engine, IP blocking) and integrated Visa CDRN with
-            automated chargeback workflows.
-          </li>
-          <li>
-            Built server-side tracking (FB CAPI, Google Ads), GTM consent flows, and a BigQuery analytics
-            pipeline.
-          </li>
-          <li>Cut video infrastructure cost ~99% by migrating from AWS S3 to Cloudflare Stream.</li>
-        </ul>
-      </div>
+        <svg
+          class="drawn-svg section-title-svg"
+          viewBox="0 0 430 80"
+          preserveAspectRatio="xMinYMid meet"
+          aria-label="Selected work"
+        >
+          <text class="drawn-text" x="0" y="68" font-size="76">Selected work</text>
+          <text class="drawn-text-fill" x="0" y="68" font-size="76">Selected work</text>
+        </svg>
 
-      <div class="exp">
-        <h3>Frontend Engineer · Sinlao Media</h3>
-        <div class="when">2019 – 2020</div>
-        <ul>
-          <li>React + Redux analytics dashboard for media-buying decisions.</li>
-        </ul>
-      </div>
+        <p class="work-intro fade-in" style="transition-delay: 0.08s">
+          A mix of shipped product work and public demos across custom DTC storefronts, Shopify apps,
+          subscription billing, merchant tooling, payments, analytics, and AI.
+        </p>
 
-      <div class="exp">
-        <h3>Frontend Engineer · IQ Option</h3>
-        <div class="when">2016 – 2019</div>
-        <ul>
-          <li>
-            Real-time monitoring system in React + WebSockets, optimised for high-frequency fintech data.
-          </li>
-        </ul>
-      </div>
+        <div class="project-list">
+          <div class="project fade-in" style="transition-delay: 0.12s">
+            <div>
+              <div class="proj-title">
+                <svg
+                  class="drawn-svg drawn-inline-title"
+                  style="--title-width: 124px"
+                  viewBox="0 0 124 54"
+                  preserveAspectRatio="xMinYMid meet"
+                  aria-label="Manna"
+                >
+                  <text class="drawn-text" x="0" y="42" font-size="44">Manna</text>
+                  <text class="drawn-text-fill" x="0" y="42" font-size="44">Manna</text>
+                </svg>
+              </div>
+              <div class="proj-desc">
+                Custom DTC e-commerce storefront built from scratch. Next.js + Node.js, integrated with
+                Sticky.io for subscription billing and order management, with a custom checkout flow,
+                CMS-powered admin panel, multi-provider payment processing, and server-side conversion
+                tracking.
+              </div>
+              <div class="proj-tags">
+                <span class="proj-tag">Next.js</span><span class="proj-tag">Node.js</span
+                ><span class="proj-tag">Sticky.io</span><span class="proj-tag">Checkout</span
+                ><span class="proj-tag">Payments</span><span class="proj-tag">CMS</span>
+              </div>
+            </div>
+            <div class="proj-links">
+              <a href="https://manna.com/" class="proj-link" target="_blank" rel="noopener">↗ website</a>
+            </div>
+          </div>
 
-      <h2>Stack</h2>
-      <dl class="stack">
-        <dt>Frontend</dt>
-        <dd>React, Next.js, TypeScript, Tailwind</dd>
-        <dt>Backend</dt>
-        <dd>Node.js, Express, GraphQL</dd>
-        <dt>Databases</dt>
-        <dd>PostgreSQL, MongoDB, Prisma</dd>
-        <dt>Infra</dt>
-        <dd>Cloudflare (Workers, Stream, DNS), AWS, DigitalOcean, Railway, Vercel</dd>
-        <dt>Payments</dt>
-        <dd>Stripe, Braintree, PayPal, Apple/Google Pay, Visa CDRN</dd>
-        <dt>Analytics</dt>
-        <dd>BigQuery, Facebook CAPI, GTM, Google Sheets API</dd>
-        <dt>Testing</dt>
-        <dd>Vitest, Playwright, Cypress</dd>
-        <dt>Mobile</dt>
-        <dd>React Native (published iOS app)</dd>
-      </dl>
+          <div class="project fade-in" style="transition-delay: 0.16s">
+            <div>
+              <div class="proj-title">
+                <svg
+                  class="drawn-svg drawn-inline-title"
+                  style="--title-width: 198px"
+                  viewBox="0 0 198 54"
+                  preserveAspectRatio="xMinYMid meet"
+                  aria-label="PassportPro"
+                >
+                  <text class="drawn-text" x="0" y="42" font-size="44">PassportPro</text>
+                  <text class="drawn-text-fill" x="0" y="42" font-size="44">PassportPro</text>
+                </svg>
+              </div>
+              <div class="proj-desc">
+                Shopify app for EU Digital Product Passport / GPSR compliance, built around QR passports, bulk
+                editing, and AI-assisted autofill for merchant workflows.
+              </div>
+              <div class="proj-tags">
+                <span class="proj-tag">Shopify</span><span class="proj-tag">Remix</span
+                ><span class="proj-tag">Node.js</span><span class="proj-tag">GPSR</span
+                ><span class="proj-tag">QR Passports</span><span class="proj-tag">AI Autofill</span>
+              </div>
+            </div>
+            <div class="proj-links">
+              <a href="https://passportpro.app/" class="proj-link" target="_blank" rel="noopener"
+                >↗ website</a
+              >
+            </div>
+          </div>
 
-      <footer>
-        <span>© <span id="year"></span> Nikita Beznosikov</span>
-      </footer>
-    </main>
+          <div class="project fade-in" style="transition-delay: 0.2s">
+            <div>
+              <div class="proj-title">
+                <svg
+                  class="drawn-svg drawn-inline-title"
+                  style="--title-width: 480px"
+                  viewBox="0 0 480 54"
+                  preserveAspectRatio="xMinYMid meet"
+                  aria-label="GMC Store Readiness Scanner"
+                >
+                  <text class="drawn-text" x="0" y="42" font-size="44">GMC Store Readiness Scanner</text>
+                  <text class="drawn-text-fill" x="0" y="42" font-size="44">GMC Store Readiness Scanner</text>
+                </svg>
+              </div>
+              <div class="proj-desc">
+                Shopify app that audits stores for Google Merchant Center compliance issues before submission,
+                surfacing blockers and store-readiness gaps early.
+              </div>
+              <div class="proj-tags">
+                <span class="proj-tag">Shopify</span><span class="proj-tag">Merchant Center</span
+                ><span class="proj-tag">Auditing</span><span class="proj-tag">Compliance</span>
+              </div>
+            </div>
+            <div class="proj-links">
+              <a
+                href="https://apps.shopify.com/gmc-store-readiness-scanner"
+                class="proj-link"
+                target="_blank"
+                rel="noopener"
+                >↗ shopify app</a
+              >
+            </div>
+          </div>
+
+          <div class="project fade-in" style="transition-delay: 0.24s">
+            <div>
+              <div class="proj-title">
+                <svg
+                  class="drawn-svg drawn-inline-title"
+                  style="--title-width: 164px"
+                  viewBox="0 0 164 54"
+                  preserveAspectRatio="xMinYMid meet"
+                  aria-label="CreditReel"
+                >
+                  <text class="drawn-text" x="0" y="42" font-size="44">CreditReel</text>
+                  <text class="drawn-text-fill" x="0" y="42" font-size="44">CreditReel</text>
+                </svg>
+              </div>
+              <div class="proj-desc">
+                Pay-per-use video testimonial SaaS built around a recording flow, credit system, and
+                embeddable widgets for collecting and publishing customer proof.
+              </div>
+              <div class="proj-tags">
+                <span class="proj-tag">Next.js</span><span class="proj-tag">Supabase</span
+                ><span class="proj-tag">Stripe</span><span class="proj-tag">Cloudflare</span
+                ><span class="proj-tag">SaaS</span>
+              </div>
+            </div>
+            <div class="proj-links">
+              <a href="https://creditreel.to/" class="proj-link" target="_blank" rel="noopener">↗ website</a>
+            </div>
+          </div>
+
+          <div class="project fade-in" style="transition-delay: 0.28s">
+            <div>
+              <div class="proj-title">
+                <svg
+                  class="drawn-svg drawn-inline-title"
+                  style="--title-width: 180px"
+                  viewBox="0 0 180 54"
+                  preserveAspectRatio="xMinYMid meet"
+                  aria-label="Tech demos"
+                >
+                  <text class="drawn-text" x="0" y="42" font-size="44">Tech demos</text>
+                  <text class="drawn-text-fill" x="0" y="42" font-size="44">Tech demos</text>
+                </svg>
+              </div>
+              <div class="proj-desc">
+                Public demos covering multi-provider payments with retry and fallback + SSE UI, a REST API
+                template with JWT + Prisma + Zod/OpenAPI, an analytics dashboard over 50k synthetic orders,
+                and an AI review analyzer with Gemini + Zod.
+              </div>
+              <div class="proj-tags">
+                <span class="proj-tag">Payments</span><span class="proj-tag">APIs</span
+                ><span class="proj-tag">Analytics</span><span class="proj-tag">AI</span
+                ><span class="proj-tag">Node.js</span><span class="proj-tag">Next.js</span>
+              </div>
+            </div>
+            <div class="proj-links">
+              <a href="https://github.com/nikbeznosikov" class="proj-link" target="_blank" rel="noopener"
+                >↗ github</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience" data-screen-label="03 Experience">
+        <p class="sec-label">03 / Experience</p>
+
+        <svg
+          class="drawn-svg section-title-svg"
+          viewBox="0 0 330 80"
+          preserveAspectRatio="xMinYMid meet"
+          aria-label="Experience"
+        >
+          <text class="drawn-text" x="0" y="68" font-size="76">Experience</text>
+          <text class="drawn-text-fill" x="0" y="68" font-size="76">Experience</text>
+        </svg>
+
+        <div>
+          <div class="exp-item fade-in">
+            <div class="exp-date">2020 – Present<br />Remote (US)</div>
+            <div>
+              <div class="exp-company">
+                <svg
+                  class="drawn-svg drawn-inline-title"
+                  style="--title-width: 304px"
+                  viewBox="0 0 304 54"
+                  preserveAspectRatio="xMinYMid meet"
+                  aria-label="Launchify Ventures"
+                >
+                  <text class="drawn-text" x="0" y="42" font-size="44">Launchify Ventures</text>
+                  <text class="drawn-text-fill" x="0" y="42" font-size="44">Launchify Ventures</text>
+                </svg>
+              </div>
+              <div class="exp-role">Senior Full-Stack Engineer</div>
+              <ul class="exp-bullets">
+                <li>
+                  Sole engineer on a DTC e-commerce platform serving ~1,000+ orders/day at peak, ~$1M/month
+                  revenue, and ~80–90% mobile traffic
+                </li>
+                <li>
+                  Re-architected a PHP/Laravel monolith into Next.js + Node.js + MongoDB, reducing new-offer
+                  launch time from ~2 weeks to ~2 days
+                </li>
+                <li>
+                  Built the checkout and offer-management system powering dynamic funnels, upsells,
+                  cross-sells, and ~10–30 VWO experiments per month
+                </li>
+                <li>
+                  Designed multi-provider payment routing across Stripe, Braintree, PayPal, and Apple/Google
+                  Pay with retry and failover, recovering roughly 10–20% of initially failed transactions
+                </li>
+                <li>
+                  Implemented fraud prevention with a rule engine, IP blocking, and automated Visa CDRN
+                  chargeback workflows, eliminating most manual chargeback operations
+                </li>
+                <li>
+                  Built server-side tracking across Facebook CAPI, Google Ads, and GTM consent flows, plus a
+                  BigQuery attribution pipeline
+                </li>
+                <li>
+                  Built internal admin tooling so non-engineers could launch and modify offers, landing pages,
+                  and checkout configuration without developer involvement
+                </li>
+                <li>
+                  Cut video infrastructure cost ~99% by migrating from AWS S3 to Cloudflare Stream and kept
+                  Core Web Vitals green across mobile-heavy traffic
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="exp-item fade-in" style="transition-delay: 0.1s">
+            <div class="exp-date">2019 – 2020</div>
+            <div>
+              <div class="exp-company">
+                <svg
+                  class="drawn-svg drawn-inline-title"
+                  style="--title-width: 208px"
+                  viewBox="0 0 208 54"
+                  preserveAspectRatio="xMinYMid meet"
+                  aria-label="Sinlao Media"
+                >
+                  <text class="drawn-text" x="0" y="42" font-size="44">Sinlao Media</text>
+                  <text class="drawn-text-fill" x="0" y="42" font-size="44">Sinlao Media</text>
+                </svg>
+              </div>
+              <div class="exp-role">Frontend Engineer</div>
+              <ul class="exp-bullets">
+                <li>
+                  Built a React + Redux analytics dashboard for media-buying decisions with real-time data
+                  visualizations
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="exp-item fade-in" style="transition-delay: 0.2s">
+            <div class="exp-date">2016 – 2019</div>
+            <div>
+              <div class="exp-company">
+                <svg
+                  class="drawn-svg drawn-inline-title"
+                  style="--title-width: 160px"
+                  viewBox="0 0 160 54"
+                  preserveAspectRatio="xMinYMid meet"
+                  aria-label="IQ Option"
+                >
+                  <text class="drawn-text" x="0" y="42" font-size="44">IQ Option</text>
+                  <text class="drawn-text-fill" x="0" y="42" font-size="44">IQ Option</text>
+                </svg>
+              </div>
+              <div class="exp-role">Frontend Engineer</div>
+              <ul class="exp-bullets">
+                <li>Built real-time monitoring UIs in React + WebSockets for high-frequency fintech data</li>
+                <li>Optimized rendering performance for sustained high-frequency updates</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="exp-item fade-in" style="transition-delay: 0.3s">
+            <div class="exp-date">2015 – 2016</div>
+            <div>
+              <div class="exp-company">
+                <svg
+                  class="drawn-svg drawn-inline-title"
+                  style="--title-width: 160px"
+                  viewBox="0 0 160 54"
+                  preserveAspectRatio="xMinYMid meet"
+                  aria-label="Greenlabs"
+                >
+                  <text class="drawn-text" x="0" y="42" font-size="44">Greenlabs</text>
+                  <text class="drawn-text-fill" x="0" y="42" font-size="44">Greenlabs</text>
+                </svg>
+              </div>
+              <div class="exp-role">Frontend Developer</div>
+              <ul class="exp-bullets">
+                <li>Built cross-browser client web applications with HTML, CSS, and JavaScript</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- STACK -->
+      <section id="stack" data-screen-label="04 Stack">
+        <p class="sec-label">04 / Stack</p>
+
+        <svg
+          class="drawn-svg section-title-svg"
+          viewBox="0 0 180 80"
+          preserveAspectRatio="xMinYMid meet"
+          aria-label="Stack"
+        >
+          <text class="drawn-text" x="0" y="68" font-size="76">Stack</text>
+          <text class="drawn-text-fill" x="0" y="68" font-size="76">Stack</text>
+        </svg>
+
+        <div class="stack-list">
+          <div class="stack-row fade-in">
+            <div class="stack-cat">Frontend</div>
+            <div class="stack-items">React, Next.js, TypeScript, Tailwind</div>
+          </div>
+          <div class="stack-row fade-in" style="transition-delay: 0.06s">
+            <div class="stack-cat">Backend</div>
+            <div class="stack-items">Node.js, Express</div>
+          </div>
+          <div class="stack-row fade-in" style="transition-delay: 0.12s">
+            <div class="stack-cat">Databases</div>
+            <div class="stack-items">MongoDB, PostgreSQL, Prisma</div>
+          </div>
+          <div class="stack-row fade-in" style="transition-delay: 0.18s">
+            <div class="stack-cat">Infra</div>
+            <div class="stack-items">Cloudflare (Workers, Stream), AWS, DigitalOcean, Vercel, Railway</div>
+          </div>
+          <div class="stack-row fade-in" style="transition-delay: 0.24s">
+            <div class="stack-cat">Payments</div>
+            <div class="stack-items">Stripe, Braintree, PayPal, Apple/Google Pay, Visa CDRN</div>
+          </div>
+          <div class="stack-row fade-in" style="transition-delay: 0.3s">
+            <div class="stack-cat">Analytics</div>
+            <div class="stack-items">BigQuery, Facebook CAPI, GTM, Google Analytics API</div>
+          </div>
+          <div class="stack-row fade-in" style="transition-delay: 0.36s">
+            <div class="stack-cat">Testing</div>
+            <div class="stack-items">Cypress, Playwright, Vitest</div>
+          </div>
+          <div class="stack-row fade-in" style="transition-delay: 0.42s">
+            <div class="stack-cat">Mobile</div>
+            <div class="stack-items">React Native (published iOS app)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section id="education" data-screen-label="05 Education">
+        <p class="sec-label">05 / Education</p>
+
+        <svg
+          class="drawn-svg section-title-svg"
+          viewBox="0 0 320 80"
+          preserveAspectRatio="xMinYMid meet"
+          aria-label="Education"
+        >
+          <text class="drawn-text" x="0" y="68" font-size="76">Education</text>
+          <text class="drawn-text-fill" x="0" y="68" font-size="76">Education</text>
+        </svg>
+
+        <div class="education-list">
+          <div class="education-item fade-in">
+            <div class="education-meta">2011 – 2014</div>
+            <div>
+              <div class="education-title">
+                <svg
+                  class="drawn-svg drawn-inline-title"
+                  style="--title-width: 364px"
+                  viewBox="0 0 364 54"
+                  preserveAspectRatio="xMinYMid meet"
+                  aria-label="B.Sc. Computer Science"
+                >
+                  <text class="drawn-text" x="0" y="42" font-size="44">B.Sc. Computer Science</text>
+                  <text class="drawn-text-fill" x="0" y="42" font-size="44">B.Sc. Computer Science</text>
+                </svg>
+              </div>
+              <div class="education-school">K.G. Razumovsky Moscow State University</div>
+            </div>
+          </div>
+
+          <div class="education-item fade-in" style="transition-delay: 0.08s">
+            <div class="education-meta">Certificate</div>
+            <div>
+              <div class="education-title">
+                <svg
+                  class="drawn-svg drawn-inline-title"
+                  style="--title-width: 594px"
+                  viewBox="0 0 594 54"
+                  preserveAspectRatio="xMinYMid meet"
+                  aria-label="IBM Cybersecurity Analyst Certificate"
+                >
+                  <text class="drawn-text" x="0" y="42" font-size="44">
+                    IBM Cybersecurity Analyst Certificate
+                  </text>
+                  <text class="drawn-text-fill" x="0" y="42" font-size="44">
+                    IBM Cybersecurity Analyst Certificate
+                  </text>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" data-screen-label="06 Contact">
+        <p class="sec-label">06 / Contact</p>
+
+        <svg
+          class="drawn-svg section-title-svg"
+          viewBox="0 0 280 80"
+          preserveAspectRatio="xMinYMid meet"
+          aria-label="Say hello"
+        >
+          <text class="drawn-text" x="0" y="68" font-size="76">Say hello.</text>
+          <text class="drawn-text-fill" x="0" y="68" font-size="76">Say hello.</text>
+        </svg>
+
+        <a
+          href="https://www.linkedin.com/in/nikita-beznosikov/"
+          class="contact-email fade-in"
+          target="_blank"
+          rel="noopener"
+          >linkedin.com/in/nikita-beznosikov</a
+        >
+
+        <p class="contact-note fade-in" style="transition-delay: 0.08s">
+          Madrid, Spain · Remote · EU work authorization · B2B contract / EOR
+        </p>
+
+        <div class="contact-links fade-in" style="transition-delay: 0.15s">
+          <a class="contact-link" href="https://github.com/nikbeznosikov" target="_blank" rel="noopener"
+            >GitHub ↗</a
+          >
+        </div>
+
+        <p
+          style="
+            margin-top: 80px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 9px;
+            opacity: 0.2;
+            letter-spacing: 0.1em;
+          "
+        >
+          © <span id="year"></span> Nikita Beznosikov
+        </p>
+      </section>
+    </div>
+
     <script>
+      // ── CURSOR ──────────────────────────────────────────────
+      const cur = document.getElementById('cur');
+      document.addEventListener('mousemove', (e) => {
+        cur.style.left = e.clientX + 'px';
+        cur.style.top = e.clientY + 'px';
+      });
+      document.querySelectorAll('a, button').forEach((el) => {
+        el.addEventListener('mouseenter', () => cur.classList.add('big'));
+        el.addEventListener('mouseleave', () => cur.classList.remove('big'));
+      });
+
+      // ── DRAWN TEXT (SVG stroke-dashoffset) ─────────────────
+      function initDrawnText(el) {
+        try {
+          const len = el.getComputedTextLength ? el.getComputedTextLength() : 2000;
+          const safeLen = Math.max(len, 100);
+          el.style.setProperty('--len', safeLen);
+          el.classList.add('ready');
+        } catch (e) {
+          el.style.setProperty('--len', 2000);
+          el.classList.add('ready');
+        }
+      }
+
+      // wait for fonts before measuring
+      document.fonts.ready.then(() => {
+        document.querySelectorAll('.drawn-text').forEach(initDrawnText);
+        document.querySelectorAll('.ul-path').forEach((el) => {
+          const len = el.getTotalLength ? el.getTotalLength() : 900;
+          el.style.setProperty('--len', len);
+          el.classList.add('ready');
+        });
+        setupObservers();
+      });
+
+      function setupObservers() {
+        // Observe SVG containers — when in view, draw all drawn-text inside
+        const svgIO = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (!e.isIntersecting) return;
+              // draw stroke
+              e.target.querySelectorAll('.drawn-text, .ul-path').forEach((el) => {
+                el.classList.add('drawn');
+              });
+              // fade in fill text shortly after
+              e.target.querySelectorAll('.drawn-text-fill').forEach((el) => {
+                el.classList.add('drawn');
+              });
+              svgIO.unobserve(e.target);
+            });
+          },
+          { threshold: 0.2 }
+        );
+
+        document.querySelectorAll('.drawn-svg, .underline-svg').forEach((svg) => svgIO.observe(svg));
+
+        // hw lines
+        const hwIO = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (!e.isIntersecting) return;
+              e.target.querySelectorAll('.hw-line').forEach((line) => line.classList.add('drawn'));
+              hwIO.unobserve(e.target);
+            });
+          },
+          { threshold: 0.2 }
+        );
+        document.querySelectorAll('.hw').forEach((el) => hwIO.observe(el));
+
+        // fade-ins
+        const fadeIO = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.classList.add('drawn');
+                fadeIO.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        document.querySelectorAll('.fade-in').forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight) {
+            el.classList.add('drawn');
+          } else {
+            fadeIO.observe(el);
+          }
+        });
+      }
+
+      // ── SCROLL PERSISTENCE ──────────────────────────────────
+      window.addEventListener('scroll', () => localStorage.setItem('nbv2-y', window.scrollY), {
+        passive: true
+      });
+      const sy = localStorage.getItem('nbv2-y');
+      if (sy) requestAnimationFrame(() => window.scrollTo(0, +sy));
+
       document.getElementById('year').textContent = new Date().getFullYear();
     </script>
   </body>
