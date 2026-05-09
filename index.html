@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nikita Beznosikov — Senior Product Engineer</title>
+    <title>Nikita Beznosikov — Senior Full-Stack Engineer</title>
     <meta
       name="description"
-      content="Senior Product Engineer (9+ years). E-commerce, checkout, payments, internal tooling. React, Next.js, Node.js, TypeScript. Sole engineer owning a DTC stack reaching ~$1M/month and 1,000+ orders/day."
+      content="Senior Full-Stack Engineer (9+ years). E-commerce, checkout, payments, internal tooling. React, Next.js, Node.js, TypeScript. Primary engineer owning a DTC stack reaching ~$1M/month and 2,000+ orders/day."
     />
     <meta name="author" content="Nikita Beznosikov" />
     <meta name="theme-color" content="#0b0b0c" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Nikita Beznosikov — Senior Product Engineer" />
+    <meta property="og:title" content="Nikita Beznosikov — Senior Full-Stack Engineer" />
     <meta
       property="og:description"
       content="9+ years building e-commerce, checkout, payments, and internal tools. React, Next.js, Node.js, TypeScript."
@@ -816,7 +816,7 @@
           <span class="brand-dot" aria-hidden="true"></span>
           <div class="brand-text">
             <span>Nikita Beznosikov</span>
-            <span class="brand-status">Open to senior product engineering roles · Open to relocation</span>
+            <span class="brand-status">Open to senior full-stack roles · Open to relocation</span>
           </div>
         </a>
         <div class="nav-links">
@@ -831,16 +831,16 @@
     <main class="page">
       <!-- HERO -->
       <section id="hero">
-        <p class="hero-eyebrow">Senior Product Engineer</p>
+        <p class="hero-eyebrow">Senior Full-Stack Engineer</p>
         <h1 class="hero-title">Nikita Beznosikov</h1>
         <p class="hero-intro">
           I build end-to-end web products — checkout flows, payment integrations, internal admin tools, and
           e-commerce systems. 9+ years of React, Next.js, Node.js, and TypeScript.
         </p>
         <p class="hero-intro">
-          For 6 years I was the sole engineer owning a US-based DTC e-commerce stack — 50+ live offers with
+          For 6 years I was the primary engineer owning a US-based DTC e-commerce stack — 50+ live offers with
           A/B variations, a React checkout SPA, Node.js backend, and internal admin tooling — that reached
-          <strong>~$1M/month</strong> revenue and <strong>~1,000 orders/day</strong>.
+          <strong>~$1M/month</strong> revenue and <strong>~2,000 orders/day</strong>.
         </p>
         <div class="hero-meta">
           <span class="meta-chip">Madrid, Spain</span>
@@ -910,6 +910,7 @@
                   <li>Custom checkout flow</li>
                   <li>Sticky.io subscription billing integration</li>
                   <li>CMS / admin panel for products, banners, and content</li>
+                  <li>Customer portal with Firebase Auth (login, registration, order history)</li>
                   <li>Payment and order-management flows</li>
                   <li>Server-side conversion tracking</li>
                 </ul>
@@ -917,8 +918,8 @@
               <div class="proj-block">
                 <h4>Stack</h4>
                 <div class="proj-stack">
-                  <span>Next.js</span><span>Node.js</span><span>Sticky.io</span><span>Checkout</span
-                  ><span>Payments</span><span>CMS</span>
+                  <span>Next.js</span><span>Node.js</span><span>Sticky.io</span><span>Firebase Auth</span
+                  ><span>Checkout</span><span>Payments</span><span>CMS</span>
                 </div>
               </div>
               <div class="proj-links">
@@ -1050,55 +1051,6 @@
                 >
               </div>
             </article>
-
-            <!-- Multi-Provider Payment System Demo -->
-            <article class="project">
-              <div class="proj-head">
-                <h3 class="proj-title">Multi-Provider Payment System Demo</h3>
-                <div class="proj-labels">
-                  <span class="proj-label demo">Public demo</span>
-                  <span class="proj-label">Payment systems</span>
-                  <span class="proj-label">Backend-heavy</span>
-                </div>
-              </div>
-              <p class="proj-summary">
-                Portfolio demo exploring payment orchestration patterns — multi-provider routing, retry logic,
-                order state transitions, and SSE event streaming. Built with AI assistance; I can walk through
-                what it does and why the pattern matters.
-              </p>
-              <div class="proj-block">
-                <h4>Built</h4>
-                <ul class="proj-list">
-                  <li>Multi-provider payment routing</li>
-                  <li>Retry logic for failed payment recovery</li>
-                  <li>Order state transitions</li>
-                  <li>Real-time event streaming via SSE</li>
-                </ul>
-              </div>
-              <div class="proj-block">
-                <h4>Stack</h4>
-                <div class="proj-stack">
-                  <span>Node.js</span><span>TypeScript</span><span>Express</span><span>PostgreSQL</span
-                  ><span>Zod</span><span>SSE</span><span>Railway</span>
-                </div>
-              </div>
-              <div class="proj-links">
-                <a
-                  href="https://web-production-dcad7.up.railway.app/"
-                  class="proj-link"
-                  target="_blank"
-                  rel="noopener"
-                  >Live demo <span class="arrow">↗</span></a
-                >
-                <a
-                  href="https://github.com/nikbeznosikov/payment-system-demo"
-                  class="proj-link"
-                  target="_blank"
-                  rel="noopener"
-                  >GitHub <span class="arrow">↗</span></a
-                >
-              </div>
-            </article>
           </div>
         </div>
 
@@ -1154,10 +1106,35 @@
                 >
               </div>
             </div>
+            <div class="demo-card">
+              <h3>Payment System Demo</h3>
+              <p>
+                Payment orchestration patterns — multi-provider routing, retry logic, order state transitions,
+                and SSE event streaming. Built with AI assistance; I can walk through what it does and why the
+                patterns matter.
+              </p>
+              <div class="demo-stack" style="margin-bottom: 10px">
+                Node.js · TypeScript · Express · PostgreSQL · SSE
+              </div>
+              <div class="proj-links" style="margin-top: 0; padding-top: 12px">
+                <a
+                  href="https://web-production-dcad7.up.railway.app/"
+                  class="proj-link"
+                  target="_blank"
+                  rel="noopener"
+                  >Live demo <span class="arrow">↗</span></a
+                >
+                <a
+                  href="https://github.com/nikbeznosikov/payment-system-demo"
+                  class="proj-link"
+                  target="_blank"
+                  rel="noopener"
+                  >GitHub <span class="arrow">↗</span></a
+                >
+              </div>
+            </div>
           </div>
         </div>
-
-        <!-- ── SIDE PRODUCT ── -->
         <div class="work-group">
           <div class="work-group-title">Side product</div>
           <div class="project-list">
@@ -1213,46 +1190,42 @@
           <div class="exp-date">2020 — Present<br />Remote (US)</div>
           <div>
             <div class="exp-company">Launchify Ventures</div>
-            <div class="exp-role">Senior Product Engineer — E-commerce Stack</div>
+            <div class="exp-role">Senior Full-Stack Engineer — E-commerce Stack</div>
             <p class="exp-summary">
-              Sole engineer owning the full e-commerce stack for a US-based DTC business reaching ~$1M/month
-              revenue and ~1,000 orders/day, with 80–90% mobile traffic.
+              Primary engineer owning the full e-commerce stack for a US-based DTC business reaching
+              ~$1M/month revenue and ~2,000 orders/day, with 80–90% mobile traffic.
             </p>
-            <div class="exp-highlights-label">Highlights</div>
+            <div class="exp-highlights-label">Project 1 — DTC platform rebuild</div>
+            <p class="exp-summary" style="font-size: 14px; margin-bottom: 8px">
+              Replaced a legacy monolith with a modular stack:
+            </p>
             <ul class="exp-bullets">
               <li>
-                Built and maintained 50+ live offers — each with a blog page, interstitial, and supporting
-                pages, many running 3–5 A/B variations in parallel. Built as standalone HTML/CSS/JS mini-apps.
+                50+ live offers (blog, interstitial, and supporting pages each), 3–5 A/B variations running in
+                parallel
               </li>
+              <li>A shared React checkout SPA across all offers</li>
+              <li>Node.js + MongoDB backend for orders, billing, fraud, and admin</li>
+              <li>JWT-based auth for all internal tools — login, role-based access, password reset flows</li>
               <li>
-                Built a single React checkout SPA shared across all offers, connected to a Node.js + MongoDB
-                backend handling orders, billing, and admin operations.
+                React admin panel so product, marketing, and ops could configure offers, checkout flows, A/B
+                tests, and integrations themselves — offer-launch time dropped from ~2 weeks to ~2 days
               </li>
+              <li>Stripe, Braintree, PayPal, Apple Pay, and Google Pay integrated through Sticky.io</li>
               <li>
-                Built a React admin panel that let product, marketing, and ops teams configure offers, pages,
-                checkout flows, A/B tests, and external integrations without engineering involvement.
+                Rule-based fraud and carding protection (IP blocking, URL parameter checks) plus Visa CDRN for
+                chargeback automation
               </li>
-              <li>
-                Built Manna.com — a separate Next.js DTC store with its own React/MUI admin panel and Node.js
-                backend, from scratch.
-              </li>
-              <li>
-                Integrated Stripe, Braintree, PayPal, Apple Pay, and Google Pay through Sticky.io as the
-                billing backend.
-              </li>
-              <li>
-                Built a retry job that reprocessed unfinished orders, recovering ~10–20% of initially failed
-                transactions.
-              </li>
-              <li>
-                Built rule-based fraud and carding protection (IP blocking, URL parameter checks) and
-                integrated Visa CDRN for chargeback automation.
-              </li>
-              <li>Built server-side tracking pipelines for Facebook CAPI, Google Ads, GTM, and BigQuery.</li>
-              <li>
-                Migrated video delivery from AWS S3 to Cloudflare Stream, reducing video infra cost ~99%.
-              </li>
+              <li>Retry job that reprocessed unfinished orders — recovered ~10–20% of failed transactions</li>
+              <li>Server-side tracking pipelines for Facebook CAPI, Google Ads, GTM, and BigQuery</li>
+              <li>Migrated video delivery from AWS S3 to Cloudflare Stream — that infra cost dropped ~99%</li>
             </ul>
+            <div class="exp-highlights-label" style="margin-top: 16px">Project 2 — Manna.com</div>
+            <p class="exp-summary" style="font-size: 14px">
+              Separate DTC store built from scratch — Next.js with its own React/MUI admin panel and Node.js
+              backend. Customer portal with Firebase Auth. Same payment integrations and tracking as Project
+              1, separate codebase.
+            </p>
           </div>
         </div>
 
@@ -1336,7 +1309,7 @@
           </div>
           <div class="stack-card">
             <div class="stack-cat">Testing</div>
-            <div class="stack-items">Playwright · Cypress</div>
+            <div class="stack-items">Playwright · Cypress · Jest</div>
           </div>
         </div>
       </section>
@@ -1368,12 +1341,12 @@
           <div class="eyebrow">05 · Get in touch</div>
           <h2>Contact</h2>
           <p class="contact-sub">
-            Open to senior product engineering roles in the Netherlands, Germany, or the UK. Also open to
-            remote EU roles from Spain.
+            Open to senior full-stack roles in the Netherlands, Germany, or the UK. Also open to remote EU
+            roles from Spain.
           </p>
           <p class="contact-loc">
             Based in Madrid, Spain · Spanish Digital Nomad Visa · No EU work authorization · B2B contract /
-            EOR · Open to relocation with sponsorship
+            EOR · Open to relocation with sponsorship · or local-permit conversion via a Spanish employer
           </p>
           <div class="contact-cta">
             <a
