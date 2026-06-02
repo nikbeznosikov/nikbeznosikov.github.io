@@ -607,6 +607,10 @@
         border-radius: var(--radius-sm);
         padding: 20px 22px;
       }
+      .demo-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
       .demo-card h3 {
         font-size: 16px;
         margin-bottom: 6px;
@@ -803,6 +807,9 @@
         .stack-grid {
           grid-template-columns: 1fr;
         }
+        .demo-grid {
+          grid-template-columns: 1fr;
+        }
         .contact-card {
           padding: 28px 22px;
         }
@@ -844,9 +851,9 @@
           live offers running 3–5 A/B variations in parallel.
         </p>
         <p class="hero-intro">
-          Currently shipping independent products on the <strong>App Store</strong> and
-          <strong>Shopify App Store</strong>. I work best with real ownership — picking the approach, building
-          both ends, integrating services, and supporting what I ship.
+          Currently shipping independent web, App Store, and <strong>Shopify App Store</strong> products. I
+          work best with real ownership — picking the approach, building both ends, integrating services, and
+          supporting what I ship.
         </p>
         <p class="hero-intro">
           AI-native workflow with <strong>Cursor, Claude, and GitHub Copilot</strong> — parallel agent
@@ -890,13 +897,58 @@
         <div class="eyebrow">01 · Selected work</div>
         <h2 class="section-title">Selected work</h2>
         <p class="work-intro">
-          Independent products shipping on the App Store and Shopify App Store, plus production work and
-          technical demos across checkout, payments, analytics, and internal tools.
+          Independent web, App Store, and Shopify App Store products, plus production work and technical demos
+          across checkout, payments, analytics, and internal tools.
         </p>
 
         <!-- ── SELECTED WORK ── -->
         <div class="work-group">
           <div class="project-list">
+            <!-- Kairos -->
+            <article class="project">
+              <div class="proj-head">
+                <h3 class="proj-title">Kairos <span class="sub">— AI Job Search Workspace</span></h3>
+                <div class="proj-labels">
+                  <span class="proj-label saas">AI product</span>
+                  <span class="proj-label">Job search</span>
+                  <span class="proj-label">Pipeline tracking</span>
+                </div>
+              </div>
+              <p class="proj-summary">
+                AI workspace built during my own search: paste a job posting and get a fit score against your
+                CV, skills, salary, and work-auth constraints.
+              </p>
+              <div class="proj-block">
+                <h4>Built</h4>
+                <ul class="proj-list">
+                  <li>Job-posting fit score against CV, skills, salary, and work-auth constraints</li>
+                  <li>Cover letter, recruiter Q&amp;A, and cold outreach generation</li>
+                  <li>Critic pass to strip out chatbot tells</li>
+                  <li>Application pipeline tracking in one workspace</li>
+                  <li>AI-native workflow built around a real job search</li>
+                </ul>
+              </div>
+              <div class="proj-block">
+                <h4>Stack</h4>
+                <div class="proj-stack">
+                  <span>Next.js 14</span><span>Supabase</span><span>Prisma</span><span>Gemini Flash</span
+                  ><span>Railway</span><span>TypeScript</span>
+                </div>
+              </div>
+              <div class="proj-links">
+                <a href="https://getkairos.fyi/" class="proj-link" target="_blank" rel="noopener"
+                  >Website <span class="arrow">↗</span></a
+                >
+                <a
+                  href="https://github.com/nikbeznosikov/kairos"
+                  class="proj-link"
+                  target="_blank"
+                  rel="noopener"
+                  >GitHub <span class="arrow">↗</span></a
+                >
+              </div>
+            </article>
+
             <!-- PassportPro -->
             <article class="project">
               <div class="proj-head">
@@ -1109,9 +1161,9 @@
         <div class="work-group">
           <div class="work-group-title">Technical demos</div>
           <p class="work-intro" style="margin-bottom: 20px">
-            AI-assisted demos I built to explore patterns relevant to my work.
+            Demos I built to explore patterns relevant to my work.
           </p>
-          <div class="project-list" style="grid-template-columns: repeat(3, 1fr); gap: 12px">
+          <div class="project-list demo-grid">
             <div class="demo-card">
               <h3>Payment System Demo</h3>
               <p>
@@ -1197,10 +1249,18 @@
             <div class="exp-company">Independent Engineer</div>
             <div class="exp-role">Shipping independent products end to end</div>
             <p class="exp-summary">
-              Designing, building, shipping, and supporting my own products on the App Store and Shopify App
-              Store — both ends of the stack, all integrations, all the way to live customers.
+              Designing, building, shipping, and supporting my own web, App Store, and Shopify App Store
+              products — both ends of the stack, all integrations, all the way to live customers.
             </p>
             <ul class="exp-bullets">
+              <li>
+                <strong>Kairos</strong>
+                (<a href="https://getkairos.fyi" target="_blank" rel="noopener">getkairos.fyi</a>,
+                <a href="https://github.com/nikbeznosikov/kairos" target="_blank" rel="noopener">GitHub</a>) —
+                AI job search workspace: fit scoring against CV, skills, salary, and work-auth constraints,
+                cover letters, recruiter Q&amp;A, cold outreach, critic pass, and application pipeline
+                tracking.
+              </li>
               <li>
                 <strong>PassportPro</strong>
                 (<a href="https://passportpro.app" target="_blank" rel="noopener">passportpro.app</a>) —
